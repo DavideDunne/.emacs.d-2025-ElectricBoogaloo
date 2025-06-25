@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: basic-note
+# key: <b
+# --
+#+TITLE: ${1:title}
+#+AUTHOR: Davide Dunne Sanchez
+
+$0
