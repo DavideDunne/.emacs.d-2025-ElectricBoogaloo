@@ -234,6 +234,8 @@
   (message "frame maximized"))
 (global-set-key (kbd "C-c f") 'my/set-full-frame)
 
+;; Setup yasnippet for creating templates
+;; https://youtu.be/W-bRZlseNm0?si=KQpbbfsXnDsIQ_Wm
 (use-package yasnippet
   :ensure t
   :config
