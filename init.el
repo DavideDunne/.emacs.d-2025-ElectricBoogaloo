@@ -109,6 +109,11 @@
   (org-babel-load-file (expand-file-name "~/.emacs.d/init.el")))
 (global-set-key (kbd "C-c r") 'config-reload)
 
+;; Seems like dashboard package needs this to work
+;; been getting error: "QuitError muted by safe_call: (dashboard-resize-on-hook #<frame *dashboard* 0x13490b740>) signaled (file-missing "Cannot open load file" "No such file or directory" "projectile")"
+(unless (package-installed-p 'projectile)
+  (package-install 'projectile))
+
 ;; A custom dashboard as startup screen
 (use-package dashboard
   :ensure t
