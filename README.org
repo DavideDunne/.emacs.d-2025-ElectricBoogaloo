@@ -11,6 +11,7 @@
 - Git version control with Magit
 - Implement LSP mode
 - Compile Emacs from source in order to use latest version in Debian and other stable distros
+- Make a blog with Jekyll and org-mode
 
 *** Stuff I should write myself (Learn elisp)
 - org-journal, creating different journals in different directories
