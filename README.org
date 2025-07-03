@@ -1,1 +1,18 @@
-a
+* .emacs.d
+** What I use currently Emacs for
+- Note taking with Org-mode
+- RSS news reading with Elfeed
+- Journal with org-journal, separated in weekly files
+- Simple org-mode snippets with YASnippet
+
+** What I would like to do with Emacs in the future
+- Reading epub and pdf files
+- Turning Emacs into an IDE
+- Git version control with Magit
+- Implement LSP mode
+- Compile Emacs from source in order to use latest version in Debian and other stable distros
+
+*** Stuff I should write myself (Learn elisp)
+- org-journal, creating different journals in different directories
+- CBR/CBZ files reader
+- Make dashboard package show all org-mode TODOs, not only the ones with a schedule
