@@ -246,3 +246,7 @@
   :config
   (setq yas-snippet-dir "~/.emacs.d/snippets")
   (yas-global-mode 1))
+
+;; Remove indentation in org-mode src code blocks
+;; https://stackoverflow.com/a/9768225
+(setq org-edit-src-content-indentation 0)
