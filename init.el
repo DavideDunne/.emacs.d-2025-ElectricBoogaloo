@@ -250,3 +250,18 @@
 ;; Remove indentation in org-mode src code blocks
 ;; https://stackoverflow.com/a/9768225
 (setq org-edit-src-content-indentation 0)
+
+;; Use Denote, a note taking system
+(use-package denote
+  :ensure t
+  :hook (dired-mode . denote-dired-mode)
+  :bind
+  (("C-c n n" . denote)
+   ("C-c n r" . denote-rename-file)
+   ("C-c n l" . denote-link)
+   ("C-c n b" . denote-backlinks)
+   ("C-c n d" . denote-dired)
+   ("C-c n g" . denote-grep))
+  :config
+  (setq denote-directory (expand-file-name "~/.emacs.d/org-mode/denote"))
+  (denote-rename-buffer-mode 1))
