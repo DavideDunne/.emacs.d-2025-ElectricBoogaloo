@@ -18,3 +18,4 @@
 - org-journal, creating different journals in different directories
 - CBR/CBZ files reader
 - Make dashboard package show all org-mode TODOs, not only the ones with a schedule
+- org journal, but for daily/weekly goals, checklist
