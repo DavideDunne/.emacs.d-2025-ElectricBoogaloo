@@ -267,3 +267,13 @@
   :config
   (setq denote-directory (expand-file-name "~/.emacs.d/org-mode/denote"))
   (denote-rename-buffer-mode 1))
+
+;; https://youtu.be/QNzNR-K2biI?si=q6bGyYEiKiHmYizN
+;; M-x org-speed-command-help
+(setq org-use-speed-commands t)
+
+;; https://www.youtube.com/live/IspAZtNTslY?si=Lyf5RHvpSc9fC14s&t=846
+;; nice colors for lisp parenthesis
+(use-package rainbow-delimiters
+  :ensure t
+  :hook (prog-mode . rainbow-delimiters-mode))
