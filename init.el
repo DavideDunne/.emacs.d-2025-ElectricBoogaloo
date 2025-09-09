@@ -1,7 +1,7 @@
 ;; Remove icons on top, I will preserve the file, edit, options... button on top of screen
 (tool-bar-mode -1)
 
-;; point (cursos) is a line instead of a square
+;; point (cursor) is a line instead of a square
 (setq-default cursor-type 'bar)
 
 ;; Stop creating backup files
@@ -15,6 +15,8 @@
 
 ;; Show line numbers
 (global-display-line-numbers-mode 1)
+;; show column
+(column-number-mode)
 
 ;; Set frame (OS Window) full screen when Emacs initializes
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
