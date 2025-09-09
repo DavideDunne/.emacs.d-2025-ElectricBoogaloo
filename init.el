@@ -113,8 +113,12 @@
 
 ;; Seems like dashboard package needs this to work
 ;; been getting error: "QuitError muted by safe_call: (dashboard-resize-on-hook #<frame *dashboard* 0x13490b740>) signaled (file-missing "Cannot open load file" "No such file or directory" "projectile")"
-(unless (package-installed-p 'projectile)
-  (package-install 'projectile))
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind (:map projectile-mode-map
+              ("C-s-p" . projectile-command-map)))
 
 ;; A custom dashboard as startup screen
 (use-package dashboard
