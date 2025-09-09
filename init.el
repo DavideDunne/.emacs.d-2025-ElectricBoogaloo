@@ -277,3 +277,7 @@
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
+
+;; enable which-key
+;; completion for Emacs keys
+(which-key-mode)
