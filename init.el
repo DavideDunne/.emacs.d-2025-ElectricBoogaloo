@@ -282,6 +282,18 @@
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
-;; enable which-key
+;; enable which-key, started to get included in Emacs 30
 ;; completion for Emacs keys
 (which-key-mode)
+
+(use-package magit
+  :ensure t)
+
+;; add file vertical file tree bar in left
+;; part of making Emacs into an IDE
+;; C-c C-p in treemacs
+;; https://youtu.be/Bu7nF9hPSts?si=Vbk4YvG669AmG3h_
+(use-package treemacs
+  :ensure t
+  :bind (:map global-map
+	      ("C-c t" . treemacs-select-window)))
