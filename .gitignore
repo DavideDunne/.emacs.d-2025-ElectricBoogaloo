@@ -1,6 +1,10 @@
 # ignore all org files inside org-mode dir
 org-mode/**/*.org
 
+# media folder
+org-mode/media/*
+!org-mode/media/.gitkeep
+
 # auto-generated stuff from Emacs
 /auto-save-list
 /elpa
