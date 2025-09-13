@@ -1,0 +1,12 @@
+# ignore all org files inside org-mode dir
+org-mode/**/*.org
+
+# auto-generated stuff from Emacs
+/auto-save-list
+/elpa
+/org-persist
+projectile-bookmarks.eld
+recentf
+/transient
+
+.DS_Store
