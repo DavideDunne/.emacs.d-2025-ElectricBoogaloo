@@ -176,7 +176,10 @@
 	("https://notxor.nueva-actitud.org/rss.xml" Noxtor)
 	("https://en.wikipedia.org/w/api.php?action=featuredfeed&feed=featured&feedformat=atom" Wikipedia)
 	("https://planet.emacslife.com/atom.xml" PlanetEmacs)
-	("https://www.theguardian.com/international/rss" Guardian)))
+	("https://www.theguardian.com/international/rss" Guardian)
+	("https://udgtv.com/feed" UDGTV)
+	("https://ciudadolinka.com/feed/" CiudadOlinka)
+	("https://www.zonadocs.mx/feed/" ZonaDocs)))
 
 ;; Open links from EWW
 (defun my/open-link-in-eww ()
