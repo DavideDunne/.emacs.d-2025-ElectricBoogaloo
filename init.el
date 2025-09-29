@@ -1,6 +1,9 @@
 ;; Remove icons on top, I will preserve the file, edit, options... button on top of screen
 (tool-bar-mode -1)
 
+;; Enable tab-bar-mode
+(tab-bar-mode 1)
+
 ;; point (cursor) is a line instead of a square
 (setq-default cursor-type 'bar)
 
