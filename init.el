@@ -303,3 +303,11 @@
   :ensure t
   :bind (:map global-map
 	      ("C-c t" . treemacs-select-window)))
+
+;; bring vs-code sticky header feature
+(use-package org-sticky-header
+  :ensure t
+  :hook ((org-mode) . org-sticky-header-mode)
+  :config
+  (setq org-sticky-header-full-path 'full)
+  (setq org-sticky-header-outline-path-separator " > "))
