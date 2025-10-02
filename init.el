@@ -314,10 +314,12 @@
 
 ;; custom org-agenda views
 (setq org-agenda-custom-commands
-      '(("d" "Monthly Agenda"
+      '(("m" "Monthly Agenda"
          ((agenda "" ((org-agenda-span 'month)))))
 	("3" "3 month agenda"
-	 ((agenda "" ((org-agenda-span 90)))))))
+	 ((agenda "" ((org-agenda-span 90)))))
+	("d" "Daily agenda"
+	 ((agenda "" ((org-agenda-span 1)))))))
 
 ;; The way we display each element in org-agenda
 (setq org-agenda-prefix-format
