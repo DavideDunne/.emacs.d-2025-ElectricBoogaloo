@@ -311,3 +311,18 @@
   :config
   (setq org-sticky-header-full-path 'full)
   (setq org-sticky-header-outline-path-separator " > "))
+
+;; custom org-agenda views
+(setq org-agenda-custom-commands
+      '(("d" "Monthly Agenda"
+         ((agenda "" ((org-agenda-span 'month)))))
+	("3" "3 month agenda"
+	 ((agenda "" ((org-agenda-span 90)))))))
+
+;; The way we display each element in org-agenda
+(setq org-agenda-prefix-format
+      '((dashboard-agenda . " %i %-12:c %s ")
+	(agenda . " %?-12t% s") ; Default: " %i %-12:c%?-12t% s"
+	(todo . " %i %-12:c")
+	(tags . " %i %-12:c")
+	(search . " %i %-12:c")))
