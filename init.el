@@ -328,3 +328,9 @@
 	(todo . " %i %-12:c")
 	(tags . " %i %-12:c")
 	(search . " %i %-12:c")))
+
+;; Open files in OS default instead of directly on Emacs
+(eval-after-load 'org
+  '(progn
+     (add-to-list 'org-file-apps '("\\.xls?x?\\'" . default))
+     (add-to-list 'org-file-apps '("\\.mp[34]\\'" . default))))
