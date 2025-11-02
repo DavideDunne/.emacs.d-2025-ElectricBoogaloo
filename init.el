@@ -334,3 +334,22 @@
   '(progn
      (add-to-list 'org-file-apps '("\\.xls?x?\\'" . default))
      (add-to-list 'org-file-apps '("\\.mp[34]\\'" . default))))
+
+;; like control-n in vs code
+;; create buffer not linked to a file
+(defun temporary-empty-buffer (buffer-name)
+  "Opens a new empty buffer."
+  (interactive "sBuffer name: ")
+  (switch-to-buffer (generate-new-buffer (format "*Temporary buffer* - %s" buffer-name)))
+  (funcall initial-major-mode)
+  (text-mode)
+  (put 'buffer-offer-save 'permanent-local t)
+  (setq buffer-offer-save t))
+(defun org-temporary-empty-buffer (buffer-name)
+  "Opens a new empty buffer."
+  (interactive "sBuffer name: ")
+  (switch-to-buffer (generate-new-buffer (format "*Org temporary buffer* - %s" buffer-name)))
+  (funcall initial-major-mode)
+  (org-mode)
+  (put 'buffer-offer-save 'permanent-local t)
+  (setq buffer-offer-save t))
