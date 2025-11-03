@@ -68,6 +68,10 @@
 ;; (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; disable auto-save
+;; https://emacs.stackexchange.com/questions/76305/how-to-disable-the-generation-of-auto-save-files-e-g-file-org-file-org-ay
+(auto-save-mode -1)
+
 ;; make sure all packages are updated
 ;; obtained from tutorial by Uncle Dave https://youtu.be/mBPQI71XaXU?si=-SWZLDxG8z2b4LNG
 (unless (package-installed-p 'use-package)
