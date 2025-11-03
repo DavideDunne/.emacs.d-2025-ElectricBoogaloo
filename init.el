@@ -33,8 +33,8 @@
 (global-set-key (kbd "C-+") 'text-scale-adjust)
 
 ;; switch keybind for save without and with question
-(global-set-key (kbd "C-x s" 'save-buffer))
-(global-set-key (kbd "C-x C-s" 'save-some-buffers))
+(global-set-key (kbd "C-x s") 'save-buffer)
+(global-set-key (kbd "C-x C-s") 'save-some-buffers)
 
 ;; Set different font sizes for the org-mode bullets
 (custom-set-faces
