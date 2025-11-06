@@ -284,7 +284,13 @@
    ("C-c n g" . denote-grep))
   :config
   (setq denote-directory (expand-file-name "~/.emacs.d/org-mode/denote"))
-  (denote-rename-buffer-mode 1))
+  (denote-rename-buffer-mode 1)
+  ;; color for denote in dired
+  ;; https://protesilaos.com/emacs/denote#h:337f9cf0-9f66-45af-b73f-f6370472fb51
+  (setq denote-dired-directories (list denote-directory)))
+;; color for denote in dired
+;; https://protesilaos.com/emacs/denote#h:337f9cf0-9f66-45af-b73f-f6370472fb51
+(add-hook 'dired-mode-hook #'denote-dired-mode-in-directories)
 
 ;; https://youtu.be/QNzNR-K2biI?si=q6bGyYEiKiHmYizN
 ;; M-x org-speed-command-help
