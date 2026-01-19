@@ -179,7 +179,9 @@
 ;; Add RSS to Emacs
 (use-package elfeed
   :ensure t
-  :init (elfeed-update))
+  :init (elfeed-update)
+  :config
+  (setq elfeed-search-filter "@1-month-ago"))
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq elfeed-feeds
   '(("https://www.informador.mx/rss/jalisco.xml" Informador News)
