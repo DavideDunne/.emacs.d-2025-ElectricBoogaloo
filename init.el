@@ -182,7 +182,7 @@
   :init (elfeed-update))
 (global-set-key (kbd "C-x w") 'elfeed)
 (setq elfeed-feeds
-      '(("https://www.informador.mx/rss/jalisco.xml" Informador News)
+  '(("https://www.informador.mx/rss/jalisco.xml" Informador News)
 	("https://www.informador.mx/rss/mexico.xml" Informador News)
 	("http://www.npr.org/rss/rss.php?id=1001" NPR News)
 	("https://stallman.org/rss/rss.xml" Stallman Blog)
