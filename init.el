@@ -197,6 +197,11 @@
 	("https://archive.org/services/collection-rss.php?collection=television_inbox" archive_television_inbox)
 	("https://archive.org/services/collection-rss.php?collection=anime" archive_anime)
 	("sinembargo.mx/feed" SinEmbargo)
+	("https://udgtv.com/podcast/guadalajara/cosa-publica-2-0/feed/19" udgtv_cosapublica)
+	("https://udgtv.com/podcast/guadalajara/multiverso/feed/233" udgtv_multiverso)
+	("https://udgtv.com/podcast/guadalajara/la-corte-del-rey-carmesi/feed/6566" udgtv_progrock)
+	("https://udgtv.com/podcast/guadalajara/el-despenadero/feed/265" udgtv_metal)
+	("https://udgtv.com/podcast/guadalajara/esto-no-es-jazz/feed/22582" udgtv_jazz)
 	))
 
 ;; Open links from EWW
