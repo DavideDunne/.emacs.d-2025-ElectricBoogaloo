@@ -1,3 +1,7 @@
+;; https://gist.github.com/DavideDunne/878e67a82513b4d9600f16c30cf9b1ec
+;; https://gist.github.com/DavideDunne/01266ea9f3cd65d75e436c40fb285677
+;; https://gist.github.com/DavideDunne/2e02b9edba1dcdc8b22e6babf000a61e
+
 ;; Remove icons on top, I will preserve the file, edit, options... button on top of screen
 (tool-bar-mode -1)
 
