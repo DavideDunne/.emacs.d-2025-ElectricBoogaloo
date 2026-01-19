@@ -190,7 +190,12 @@
 	("https://www.theguardian.com/international/rss" Guardian)
 	("https://udgtv.com/feed" UDGTV)
 	("https://ciudadolinka.com/feed/" CiudadOlinka)
-	("https://www.zonadocs.mx/feed/" ZonaDocs)))
+	("https://www.zonadocs.mx/feed/" ZonaDocs)
+	("https://archive.org/services/collection-rss.php?collection=hifidelity_potpourri" archive_hifidelity_potpourri)
+	("https://archive.org/services/collection-rss.php?collection=comics_inbox" archive_comics_inbox)
+	("https://archive.org/services/collection-rss.php?collection=manga_library" archive_manga_library)
+	("https://archive.org/services/collection-rss.php?collection=television_inbox" archive_television_inbox)
+	("https://archive.org/services/collection-rss.php?collection=anime" archive_anime)))
 
 ;; Open links from EWW
 (defun my/open-link-in-eww ()
