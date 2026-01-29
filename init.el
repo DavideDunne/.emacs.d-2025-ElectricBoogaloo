@@ -380,3 +380,16 @@
   (org-mode)
   (put 'buffer-offer-save 'permanent-local t)
   (setq buffer-offer-save t))
+
+(defun org-copy-src-block-content ()
+  "Copy the content of the current org-mode source block to the kill ring."
+  (interactive)
+  (unless (org-in-src-block-p)
+    (error "Not in a source block"))
+  (save-excursion
+    (org-edit-src-code)
+    (mark-whole-buffer)
+    (kill-ring-save (point-min) (point-max))
+    (org-edit-src-abort)
+    (message "Source block copied to clipboard")))
+(global-set-key (kbd "C-c y") 'org-copy-src-block-content)
