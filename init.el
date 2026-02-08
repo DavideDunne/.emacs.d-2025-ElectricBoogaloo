@@ -393,3 +393,23 @@
     (org-edit-src-abort)
     (message "Source block copied to clipboard")))
 (global-set-key (kbd "C-c y") 'org-copy-src-block-content)
+
+;; org calendar reminder notifications
+(use-package alert
+  :ensure t
+  :config
+  (cond ((eq system-type 'darwin)
+	 (setq alert-default-style 'osx-notifier))
+	((eq system-type 'windows-nt)
+	 (setq alert-default-style 'toaster))
+	(t
+	 (setq alert-default-style 'notifications))
+	)
+  )
+(use-package org-wild-notifier
+  :ensure t
+  :after org
+  :config
+  (setq org-wild-notifier-alert-time '(0 15 30 60 720 1080 1440))
+  (setq org-wild-notifier-keyword-blacklist '("DONE"))
+  (org-wild-notifier-mode 1))
