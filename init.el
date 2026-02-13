@@ -413,3 +413,14 @@
   (setq org-wild-notifier-alert-time '(0 15 30 60 720 1080 1440))
   (setq org-wild-notifier-keyword-blacklist '("DONE"))
   (org-wild-notifier-mode 1))
+
+(when (eq system-type 'darwin)
+  (defun org-pngpaste ()
+    "Use the MacOS pngpaste cli program to paste a png named as the current time in ISO8601 format
+inside ~/.emacs.d/org-mode/media
+Info about pngpaste: https://formulae.brew.sh/formula/pngpaste"
+    (interactive)
+    (let ((current-iso8601-time (format-time-string "%Y%m%dT%H%M%S" (current-time))))
+      (shell-command
+       (format "pngpaste ~/.emacs.d/org-mode/media/%s.png" current-iso8601-time))
+      (message "Generated %s.png" current-iso8601-time))))
