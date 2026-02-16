@@ -434,6 +434,7 @@ Info about pngpaste: https://formulae.brew.sh/formula/pngpaste"
     (let ((current-iso8601-time (format-time-string "%Y%m%dT%H%M%S" (current-time))))
       (shell-command
        (format "pngpaste ~/.emacs.d/org-mode/media/%s.png" current-iso8601-time))
+	  (insert (format "[[~/.emacs.d/org-mode/media/%s.png]]" current-iso8601-time))
       (message "Generated %s.png" current-iso8601-time))))
 
 (when (eq system-type 'windows-nt)
