@@ -110,7 +110,11 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(modus-vivendi-tinted))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(alert-toast company dashboard denote elfeed ido-vertical-mode magit
+		 org-bullets org-journal org-sticky-header
+		 org-wild-notifier projectile rainbow-delimiters
+		 switch-window treemacs yasnippet)))
 
 
 ;; C-c e to visit init.el
@@ -395,16 +399,23 @@
 (global-set-key (kbd "C-c y") 'org-copy-src-block-content)
 
 ;; org calendar reminder notifications
+;; install alert dependency
 (use-package alert
   :ensure t
   :config
   (cond ((eq system-type 'darwin)
 	 (setq alert-default-style 'osx-notifier))
 	((eq system-type 'windows-nt)
-	 (setq alert-default-style 'toaster))
+	 (setq alert-default-style 'toast))
 	(t
 	 (setq alert-default-style 'notifications))
 	)
+  )
+;; windows notification alert
+(when (eq system-type 'windows-nt)
+  (use-package alert-toast
+    :ensure t
+    :after alert)
   )
 (use-package org-wild-notifier
   :ensure t
@@ -424,3 +435,17 @@ Info about pngpaste: https://formulae.brew.sh/formula/pngpaste"
       (shell-command
        (format "pngpaste ~/.emacs.d/org-mode/media/%s.png" current-iso8601-time))
       (message "Generated %s.png" current-iso8601-time))))
+
+(when (eq system-type 'windows-nt)
+  (defun org-clipboard-save-img-powershell ()
+    "Run a powershell command from cmd in order to save a image in clipboard
+in media folder for my org files"
+    (interactive)
+    (let ((current-iso8601-time (format-time-string "%Y%m%dT%H%M%S" (current-time))))
+      (shell-command
+       (format "powershell -command \"Add-Type -AssemblyName System.Drawing; $img = Get-Clipboard -Format Image; $path = \\\"$env:AppData\\.emacs.d\\org-mode\\media\\%s.png\\\"; $img.Save($path, [System.Drawing.Imaging.ImageFormat]::Png)\"" current-iso8601-time))
+      (insert (format "[[~/.emacs.d/org-mode/media/%s.png]]" current-iso8601-time))
+    )
+  )
+)
+
