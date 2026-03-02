@@ -59,6 +59,9 @@
 ;; Where should org-agenda be getting it's schedules and tags from
 (setq org-agenda-files (directory-files-recursively "~/.emacs.d/org-mode" "\\.org$"))
 
+;; don't show DONE tasks on org-agenda view
+(setq org-agenda-skip-scheduled-if-done t)
+
 ;; Don't make insert enable overwrite
 (define-key global-map [(insertchar)] nil)
 
