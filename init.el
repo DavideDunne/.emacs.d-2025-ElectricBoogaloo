@@ -65,6 +65,9 @@
 ;; Don't make insert enable overwrite
 (define-key global-map [(insertchar)] nil)
 
+;; warning of org-deadline if happens in 2 days
+(setq org-deadline-warning-days 2)
+
 ;; press RET in order to follow links in org-mode
 (setq org-return-follows-link  t) 
 
