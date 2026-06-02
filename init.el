@@ -341,6 +341,39 @@
   :bind (:map global-map
 	      ("C-c t" . treemacs-select-window)))
 
+;; https://emacsredux.com/blog/2024/03/11/tracking-world-time-with-emacs/
+;; https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+(setq world-clock-list
+      '(("America/Mexico_City" "Guadalajara - Mexico")
+	("America/New_York" "Naples - Florida")
+	("America/Chicago" "Arkansas")
+	("Asia/Kolkata" "Noida - India")
+	("America/Louisville" "Kentucky")
+	("Asia/Tokyo" "Japan")
+	("America/Los_Angeles" "California")
+	("Europe/London" "England")
+	("UTC" "UTC-0")))
+(setq world-clock-time-format "%A %d %b %Y %R")
+
+
+(defun ediff-strings (string-a string-b)
+  "Prompt the user for two strings and compare them in Ediff."
+  (interactive
+   (list
+    (read-string "First string: ")
+    (read-string "Second string: ")))
+  ;; Create temporary buffers
+  (let ((buf-a (generate-new-buffer "*ediff-a*"))
+        (buf-b (generate-new-buffer "*ediff-b*")))
+    ;; Insert the strings into those buffers
+    (with-current-buffer buf-a
+      (insert string-a))
+    (with-current-buffer buf-b
+      (insert string-b))
+    ;; Run Ediff
+    (ediff-buffers buf-a buf-b)))
+(setq ediff-keep-variants nil)
+
 ;; bring vs-code sticky header feature
 (use-package org-sticky-header
   :ensure t
