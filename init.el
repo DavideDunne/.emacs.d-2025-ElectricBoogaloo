@@ -355,6 +355,23 @@
 	("UTC" "UTC-0")))
 (setq world-clock-time-format "%A %d %b %Y %R")
 
+;; show world clock on dashboard startup page
+(defun my/world-clock-values ()
+  "Return an alist of (LABEL . TIME) for `world-clock-list`."
+  (mapcar (lambda (entry)
+            (cons (cadr entry)
+                  (format-time-string world-clock-time-format nil (car entry))))
+          world-clock-list))
+(defun dashboard-insert-world-clock (list-size)
+  "Insert a custom world clock section into Dashboard."
+  (ignore list-size)
+  (dashboard-insert-heading "World clock:\n" nil)
+  (dolist (entry (my/world-clock-values))
+    (insert (format "  %s  %s\n" (car entry) (cdr entry)))))
+(with-eval-after-load 'dashboard
+  (add-to-list 'dashboard-item-generators '(world-clock . dashboard-insert-world-clock))
+  (add-to-list 'dashboard-items '(world-clock) t))
+
 
 (defun ediff-strings (string-a string-b)
   "Prompt the user for two strings and compare them in Ediff."
