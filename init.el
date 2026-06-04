@@ -506,3 +506,22 @@ in media folder for my org files"
   )
 )
 
+(when (eq system-type 'darwin)
+  (defun my/org-reveal-file-in-finder ()
+    "Reveal the file at point in MacOS Finder and highlight it."
+    (interactive)
+    (let* ((context (org-element-context))
+	   (type (org-element-property :type context))
+	   (path (org-element-property :path context)))
+      (unless (and (eq (org-element-type context) 'link)
+		   (string= type "file")
+		   path)
+	(user-error "Point is not on an Org file link"))
+      (let* ((expanded (expand-file-name path
+					 (or (buffer-file-name) default-directory))))
+	(unless (file-exists-p expanded)
+	  (user-error "File does not exist: %s" expanded))
+	(shell-command (format "open -R %s" (shell-quote-argument expanded)))
+	))))
+
+
