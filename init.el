@@ -277,6 +277,48 @@
 ;; Global keybinding: M-RET opens link in EWW with reading mode
 (global-set-key (kbd "M-RET") 'my/open-link-in-eww-reading-mode)
 
+;; default elfeed filters
+(defun elfeed-podcast-politics ()
+  "Open politics podcasts"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+Podcast +Politics @2-weeks-ago"))
+(defun elfeed-podcast-culture ()
+  "Open culture podcasts"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+Podcast +Culture @2-weeks-ago"))
+(defun elfeed-internetarchive ()
+  "Open internet archive feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+InternetArchive @2-weeks-ago"))
+(defun elfeed-news-local ()
+  "Open local news feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+News +Local @2-weeks-ago"))
+(defun elfeed-news-nacional ()
+  "Open local news feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+News +Nacional @2-weeks-ago"))
+(defun elfeed-news-internacional ()
+  "Open national news feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+News +Internacional @2-weeks-ago"))
+(defun elfeed-news-tech ()
+  "Open international news feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+News +Tech @2-weeks-ago"))
+(defun elfeed-blog ()
+  "Open blog feed"
+  (interactive)
+  (elfeed)
+  (elfeed-search-set-filter "+Blog @2-weeks-ago"))
+
 ;; Use org-journal
 (use-package org-journal
   :ensure t
