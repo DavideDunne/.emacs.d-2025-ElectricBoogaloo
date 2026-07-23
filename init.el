@@ -329,11 +329,13 @@
   :config
   (setq org-journal-dir "~/.emacs.d/org-mode/journal"
 	;; Date format with day of the week, day of month, month name, year (Thursday, 04 July 2024)
-        org-journal-date-format "%A, %d %B %Y"
+    org-journal-date-format "%A, %d %B %Y"
 	;; file format with number of week, day of month, month name, year (Ex. W27-01-Jul-2024.org)
 	org-journal-file-format "W%W-%d-%b-%Y.org"
 	;; will create a new org file each week
-	org-journal-file-type 'weekly))
+	org-journal-file-type 'weekly
+	;; Open journal entries in the selected window instead of splitting it
+	org-journal-find-file 'find-file))
 (global-set-key (kbd "C-c j n") 'org-journal-new-entry)
 (global-set-key (kbd "C-c j t") 'org-journal-open-current-journal-file)
 
