@@ -253,6 +253,7 @@
 	  ("https://actualidad.rt.com/feeds/all.rss" RT News Internacional)
 	  ("https://www.cgtn.com/subscribe/rss/section/china.xml" CGTNChina News Internacional)
 	  ("https://www.cgtn.com/subscribe/rss/section/world.xml" CGTNWorld News Internacional)
+	  ("https://www.merriam-webster.com/wotd/feed/rss2" MerriamWebsterWOTD Culture)
 	  ))
 )
 (global-set-key (kbd "C-x w") 'elfeed)
